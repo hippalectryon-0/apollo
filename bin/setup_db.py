@@ -1,10 +1,12 @@
 import os
 import sys
 
-from alembic.config import Config
 from alembic import command
+from alembic.config import Config
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+
+load_dotenv()
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(CURRENT_DIR))
@@ -17,11 +19,11 @@ db_pass = os.getenv("DB_PASS", "")
 # Create database
 if db_pass:
     os.system(
-        f"mysql -u{db_user} -p{db_pass} -e 'create database apollo character set UTF8mb4 collate utf8mb4_bin';"
+            f"mysql -u{db_user} -p{db_pass} -e 'create database apollo character set UTF8mb4 collate utf8mb4_bin';"
     )
 else:
     os.system(
-        f"mysql -u{db_user} -e 'create database apollo character set UTF8mb4 collate utf8mb4_bin';"
+            f"mysql -u{db_user} -e 'create database apollo character set UTF8mb4 collate utf8mb4_bin';"
     )
 
 # Create tables
