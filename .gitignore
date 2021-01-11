@@ -2,3 +2,5 @@ __pycache__
 memory
 src
 .env
+.idea/
+venv/
