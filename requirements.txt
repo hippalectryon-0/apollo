@@ -6,5 +6,5 @@ raven
 discord.py
 psutil
 dblpy
-pyyarl
+pyyaml
 yarl
