@@ -67,6 +67,7 @@ class Apollo(commands.AutoShardedBot):
         channel = self.get_channel(payload.channel_id)
         message = await channel.fetch_message(payload.message_id)
         member = channel.guild.get_member(payload.user_id)
+        print(payload.emoji, member)
         await message.remove_reaction(payload.emoji, member)
 
     async def _run_event(self, coro, event_name, *args, **kwargs):
