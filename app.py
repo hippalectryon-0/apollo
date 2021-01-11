@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-import dbl
+# import dbl
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -87,7 +87,7 @@ apollo.add_cog(TimeZoneCommand(apollo, time_zone_embed, time_zone_input))
 apollo.add_check(NotEventChannel(apollo))
 
 # Add tasks
-if env == "production":
-    apollo.add_cog(SyncDiscordBots(apollo, dbl.Client(apollo, os.getenv("DBL_TOKEN"))))
+# if env == "production":
+#     apollo.add_cog(SyncDiscordBots(apollo, dbl.Client(apollo, os.getenv("DBL_TOKEN"))))
 
 apollo.run(os.getenv("BOT_TOKEN"), reconnect=True)
