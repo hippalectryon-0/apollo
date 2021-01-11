@@ -108,6 +108,7 @@ class EventEmbed:
 
     def _organizer_name(self, event, guild):
         """Retrieve the guild specific display name of the organizer"""
+        print(guild, event.organizer_id, guild.get_member(event.organizer_id))
         organizer = guild.get_member(event.organizer_id)
         if organizer:
             return organizer.display_name
