@@ -8,3 +8,5 @@ psutil
 dblpy
 pyyaml
 yarl
+mysqlclient
+
