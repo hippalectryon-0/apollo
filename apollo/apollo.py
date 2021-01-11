@@ -10,7 +10,7 @@ from apollo.prefix import prefix_callable
 
 class Apollo(commands.AutoShardedBot):
     def __init__(self, Session, cache):
-        super().__init__(command_prefix=prefix_callable, intents=discord.Intents.members)
+        super().__init__(command_prefix=prefix_callable, intents=discord.Intents.all())
         self.Session = Session
         self.cache = cache
 
