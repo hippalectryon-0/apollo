@@ -5,3 +5,4 @@ arrow
 raven
 discord.py
 psutil
+yaml
