@@ -14,45 +14,45 @@ event:
   created_by:
     Created by {} | React with {} to remove this event
   capacity_prompt:
-    "Enter the maximum number of attendees (type `None` for no limit):"
+    "Nombre max de praticipants (`None` pour ne pas mettre de limite):"
   description_prompt:
-    "Enter the event description (type `None` for no description):"
+    "Description de l'évènement (`None` pour ne pas en mettre):"
   declined:
-    Declined
+    Décliné
   invalid_description:
-    "Event description must be less than {} characters. Try again:"
+    "La description doit faire moins de {} charactères. Essaie à nouveau:"
   invalid_capacity:
-    "Entry must be between 1 and {} (or `None` for no limit). Try again:"
+    "Doit être entre 1 et {} (ou `None` pour ne pas mettre de limite). Essaie à nouveau:"
   invalid_start_time:
-    "Invalid start time. Try again:"
+    "Date de début invalide. Essaie à nouveau:"
   invalid_time_zone:
-    "Invalid time zone entry. Enter the number beside your time zone:"
+    "Timezone incorrecte. Entre le nombre devant ta timezone:"
   invalid_title:
-    "Event title must be less than {} characters. Try again:"
+    "Le titre doit faire moins de {} charactères. Essaie à nouveau:"
   local_start_time:
-    "Local start time: **{}**"
+    "Date de début (temps local): **{}**"
   standby:
     Standby
   start_time_prompt:
-    "Enter the event start time (ex. `2018-08-01 7:00 pm` or `2018-08-17 19:00`):"
+    "Date de début de l'event (ex. `2018-08-01 7:00 pm` ou `2018-08-17 19:00`):"
   start_time_in_the_past:
-    "Event start time cannot be in the past. Try again:"
+    "La date de début ne peut pas être déjà passée. Essaie à nouveau:"
   tentative:
-    Tentative
+    Peut-être
   time:
-    "Time"
+    "Date"
   time_zone_prompt:
-    "Enter your time zone:"
+    "Entre ta timezone:"
   title_prompt:
-    "Enter the event title:"
+    "Entre le titre de l'évènement:"
   unknown_user:
-    Unknown User
+    Utilisateur inconnu
 
 prefix:
   changed:
-    "The command prefix has been changed to: `{}`"
+    "Le préfixe des commandes a été changé à: `{}`"
   missing:
-    Oops! You didn't provide a new command prefix.
+    Oups ! Vous n'avez pas spécifié de nouveau préfixe.
 
 role:
   channel_role_changed:
@@ -84,21 +84,21 @@ select_channel:
 
 about:
   title:
-    Apollo
+    Apollo BAC
   users:
-    Users
+    Utilisateurs
   servers:
-    Servers
+    Serveurs
   events:
-    Events
+    Évènements
   memory:
-    Memory
+    Mémoire
   cpu:
     CPU
   uptime:
     Uptime
   made_with:
-    Made with discord.py
+    :D
   invite_link:
     "[Invite Link]({})"
   discord_server:
@@ -108,7 +108,7 @@ about:
 
 help:
   available_commands:
-    Available commands
+    Commandes disponibles
   server_invite:
     For additional help, join the [Apollo Discord server]({}).
 
@@ -159,4 +159,4 @@ error:
     I'm not sure where you went. We can try this again later.
 
 apollo:
-  Apollo
+  Apollo BAC
