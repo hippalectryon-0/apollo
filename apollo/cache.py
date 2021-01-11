@@ -25,7 +25,7 @@ class Cache:
         self.prefixes.pop(guild_id)
 
     def get_prefix(self, guild_id):
-        return self.prefixes[guild_id]
+        return self.prefixes[guild_id] if guild_id in self.prefixes else None
 
     def load_prefixes(self):
         with self.scoped_session() as session:
