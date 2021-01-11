@@ -2,10 +2,8 @@ import asyncio
 import os
 from contextlib import contextmanager
 
-import arrow
 import discord
 from discord.ext import commands
-from raven import Client
 
 from apollo.prefix import prefix_callable
 
@@ -14,7 +12,6 @@ class Apollo(commands.AutoShardedBot):
     def __init__(self, Session, cache):
         super().__init__(command_prefix=prefix_callable)
         self.Session = Session
-        self.client = Client(os.getenv("SENTRY_URL"))
         self.cache = cache
 
     @contextmanager
@@ -34,14 +31,14 @@ class Apollo(commands.AutoShardedBot):
         """Create a text channel with permissions needed to display events"""
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(
-                send_messages=False, add_reactions=True
+                    send_messages=False, add_reactions=True
             ),
-            guild.me: discord.PermissionOverwrite(
-                send_messages=True, add_reactions=True
+            guild.me:           discord.PermissionOverwrite(
+                    send_messages=True, add_reactions=True
             ),
         }
         return await guild.create_text_channel(
-            "events", category=category, overwrites=overwrites
+                "events", category=category, overwrites=overwrites
         )
 
     def find_guild_member(self, guild_id, user_id):
@@ -55,7 +52,7 @@ class Apollo(commands.AutoShardedBot):
             return (message.author == user) and (message.channel == channel)
 
         return await self.wait_for(
-            "message", check=is_from_user_in_channel, timeout=timeout
+                "message", check=is_from_user_in_channel, timeout=timeout
         )
 
     async def get_next_pm(self, user, timeout=120):
@@ -67,7 +64,6 @@ class Apollo(commands.AutoShardedBot):
         channel = self.get_channel(payload.channel_id)
         message = await channel.fetch_message(payload.message_id)
         member = channel.guild.get_member(payload.user_id)
-        print(payload.emoji, member)
         await message.remove_reaction(payload.emoji, member)
 
     async def _run_event(self, coro, event_name, *args, **kwargs):
